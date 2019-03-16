@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<%= render 'layouts/head' %>
+<body>
+<div id="wrapper">
+  <div class="header">
+    <%= render 'layouts/header' %>
+  </div>
+  <% if notice %>
+    <div class="notice"><%= notice %></div>
+  <% end %>
+  <% if alert %>
+    <div class="alert"><%= alert %></div>
+  <% end %>
+  <div class="main-content">
+    <%= yield %>
+  </div>
+  <div class="footer">
+    <%= render 'layouts/footer' %>
+  </div>
+</div>
+</body>
+</html>

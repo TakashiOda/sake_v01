@@ -1,5 +1,14 @@
-<p>Welcome <%= @email %>!</p>
+<p>こんにちは <%= @email %>さん</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>この度は Donosake に会員登録いただきありがとうございます。</br>下記のリンクからアカウント有効化へのステップへお進みください。</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</br>
+<p><%= link_to 'アカウントを有効化', confirmation_url(@resource, confirmation_token: @token) %></p>
+</br>
+
+<p>・もし当サービスに会員登録した覚えがない場合はメールを破棄してください。</br>
+・またこのアドレスには返信できませんのでご了承ください。<p/>
+
+</br>
+<p>お酒と料理のマリージュAIアプリ</br>
+Donosake 運営チーム</p>

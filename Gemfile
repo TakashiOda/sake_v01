@@ -30,6 +30,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'sqlite3', '~> 1.3.6'
+  gem 'rb-readline'
 end
 
 group :development do

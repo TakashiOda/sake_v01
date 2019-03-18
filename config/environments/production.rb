@@ -64,13 +64,13 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "sake_v0_#{Rails.env}"
   config.action_mailer.default_url_options = { :host => 'www.donosake.com' }
   config.action_mailer.perform_caching = false
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :enable_starttls_auto => true,
       :address => "smtp.sendgrid.net",
       :port => 587,
-      :domain => "donosake.com",
+      :domain => "www.donosake.com",
       :user_name => ENV['SENDGRID_USERNAME'],
       :password => ENV['SENDGRID_PASSWORD'],
       :authentication => :plain

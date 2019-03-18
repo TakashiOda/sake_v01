@@ -67,13 +67,13 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => "app127775943@heroku.com",
-      :password => "sf6wruxt1671",
-      :domain => "donosake.com",
-      :address => "smtp.sendgrid.net",
+      :enable_starttls_auto => true,
+      :address => "smtp.gmail.com",
       :port => 587,
-      :authentication => :plain,
-      :enable_starttls_auto => true
+      :domain => "gmail.com",
+      :user_name => "wiwi5223@gmail.com",
+      :password => "prqffoofrdgwjkdq",
+      :authentication => :plain
   }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

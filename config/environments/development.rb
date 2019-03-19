@@ -36,11 +36,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :enable_starttls_auto => true,
-      :address => "smtp.gmail.com",
+      :address => "smtp.sendgrid.net",
       :port => 587,
-      :domain => 'gmail.com',
-      :user_name => Rails.application.credentials.gmail[:username],
-      :password =>  Rails.application.credentials.gmail[:password],
+      :domain => 'donosake.com',
+      :user_name => Rails.application.credentials.sendrid[:username],
+      :password => Rails.application.credentials.sendrid[:password],
       :authentication => 'plain'
   }
 

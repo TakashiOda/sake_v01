@@ -38,7 +38,7 @@ Rails.application.configure do
       :enable_starttls_auto => true,
       :address => "smtp.gmail.com",
       :port => 587,
-      :domain => 'donosake.com',
+      :domain => 'gmail.com',
       :user_name => Rails.application.credentials.gmail[:username],
       :password =>  Rails.application.credentials.gmail[:password],
       :authentication => 'plain'

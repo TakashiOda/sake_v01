@@ -81,160 +81,102 @@ input:-webkit-autofill {
 
 .header {
   background-color: #fff;
-  width: 100vw;
-  border-bottom: 1px solid lightgray;
+  padding: 10px;
 }
 
 .first {
   height: 70px;
   display: flex;
-  .before-logo {width: 30vw;}
+  justify-content: space-between;
   .logo {
-    width: 40vw;
-    // font-size: 33px;
-    @include centered_block;
-    img {height: 70px;}
-    a {
-      display: block;
-      text-decoration: none;
-      color: gray;
-    }
+    display: flex;
+    align-items: center;
   }
+  .logo img {width: 50vw;}
   .user-page-btn {
-    width: 30vw;
-    @include centered_block;
-    a {
-      display: block;
-      text-decoration: none;
-      font-size: 10px;
-      overflow: hidden;
-      color: gray;
-      border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    .login_top_sp {
+      font-size: 15px;
+      font-weight: bold;
+      color: #fff;
+      background: orange;
+      padding: 10px 10px;
       border-radius: 3px;
-      padding-top: 7px;
-      padding-bottom: 7px;
-      padding-left: 12px;
-      padding-right: 12px;
-      &:hover {background-color: #F2F2F2;}
+      text-decoration: none;
     }
-    label {margin-bottom: 0;}
   }
 }
 
 .second {
-  height: 50px;
-  padding: 0px 7px;
-  @include centered_block;
+  padding: 0px 15px;
+  //@include centered_block;
   ul {
-    @include centered_block;
+    display: flex;
+    justify-content: space-between;
     padding: 0;
     margin: 0;
     a {
       text-decoration: none;
       display: block;
-      color: gray;
+      color: #333333;
       font-weight: 500;
       &:hover {
         background-color: $KEY_BG_COLOR;
-        border-radius: 3px;
       }
-    }
-  }
-}
-
-//*******headerスマホ********
-@media screen and (max-width: 768px) {
-  .second {
-    a{
-      font-size: 13px;
-      padding: 14px 8px;
     }
   }
 }
 
 //*****headerPC用*********
 @media screen and (min-width: 768px) {
+  .header {
+    padding: 20px 30px;
+  }
+  .first {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {width: 20vw;}
+    .user-page-btn {
+      display: flex;
+      align-items: center;
+      .login_top_sp {
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        background: orange;
+        padding: 10px 10px;
+        border-radius: 3px;
+        text-decoration: none;
+      }
+    }
+  }
+
   .second {
-    a{
-      font-size: 13px;
-      padding: 14px 8px;
+    padding: 0px 15px;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      margin: 0;
+      a {
+        text-decoration: none;
+        display: block;
+        color: #333333;
+        font-weight: 500;
+        &:hover {
+          background-color: $KEY_BG_COLOR;
+        }
+      }
     }
   }
 }
 
-//**********ドロップダウン********
-
-// .dropdown {
-//   float: right;
-//   display: inline-block;
-//   margin-top: 5px;
-//   // margin-right: 30px;
-//   height: 60px;
-//   }
-// label.dropLabel {
-//   margin-right: 10;
-//   margin-bottom: 0;
-//   user-select: none;
-//   border: 1px solid pink;
-//   border-radius: 3px;
-//   padding-right: 5px;
-//   padding-left: 5px;
-// }
-
-// #tg {
-//   display: none;
-//   }
-
-// .menu {
-//   position: relative;
-//   visibility: hidden;
-//   opacity: 0;
-//   top: -10px;
-//   list-style: none;
-//   }
-
-// .dropInput:checked ~ .menu {
-//   visibility: visible;
-//   opacity: 1;
-//   top: 0;
-//   }
-
-// .dropLabel {
-//   padding: 1em 1.5em;
-//   display: block;
-//   text-align: center;
-//   position: relative;
-//   color: #EE6557;
-//   text-decoration: none;
-//   }
-
-// .item {
-//   padding: 1em 1.5em;
-//   display: block;
-//   text-align: center;
-//   position: relative;
-//   color: #333;
-//   // background-color: #fff;
-//   background-color: #fce1df;
-//   text-decoration: none;
-// }
-
-// .item:hover {
-//   background-color: #EE6557;
-//   color: #fff;
-//   }
-
-// .dropLabel:hover, .dropInput:checked + label {
-//   background: #EE6557;
-//   color: #fff;
-//   }
-
-// .animation {
-//   -webkit-transition: all .3s;
-//   -moz-transition: all .3s;
-//   -ms-transition: all .3s;
-//   transition: all .3s;
-//   }
 
 // ****Footer**********************
 footer {
@@ -509,39 +451,22 @@ li#btn_google img{
 //********Home検索*****************
 .home-search-wrapper {
   width: 100%;
-  padding: 40px 0 60px 0;
-  background-color: $KEY_BG_COLOR;
-  color: #fff;
+  height: 300px;
+  background-image: url("top_picture2_dark.jpg");
+  background-size: cover;
+  background-position: center center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  #home-search-pic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    img{
-      padding-bottom: 20px;
-      display: block;
-      width: 250px;
+  .home-search-text {
+    p {
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      padding: 0 0 0 8px;
+      font-size: 20px;
+      font-weight: bold;
     }
-  }
-}
-
-.home-search-title {
-  color: gray;
-  h3 {
-    text-align: left;
-    margin: 0;
-    padding: 0 0 8px 0px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  p {
-    margin: 0;
-    padding: 0 0 0 8px;
-    font-size: 12px;
   }
 }
 
@@ -570,15 +495,8 @@ li#btn_google img{
 }
 
 
-@media screen and (max-width: 768px) {
-  .home-search {
-    display: flex;
-    flex-direction: row;
-  }
-  input#home_search_box {width: 80vw;}
-}
 @media screen and (min-width: 768px) {
-  input#home_search_box {width: 615px;}
+  .home-search-wrapper {height: 350px;}
 }
 
 

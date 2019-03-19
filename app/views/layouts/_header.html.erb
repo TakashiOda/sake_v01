@@ -2,32 +2,26 @@
   <div class="header-menus">
 
     <div class="first">
-      <div class="before-logo"></div>
       <div class="logo">
-        <%= link_to image_tag('sakiika.png'), root_path %>
-      </div>
-        <% if user_signed_in? %>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <%= link_to root_path do %>
+          <%= image_tag "logo_donosake2.png" %>
         <% end %>
-<!--      <div class="user-page-btn">-->
-        <%# if user_signed_in? %>
-          <%#= link_to user_evaluations_path(current_user) do %>
-          <%#= link_to user_path(current_user) do %>
-<!--            <label><i class="far fa-user"></i> <%#= current_user.username %> さん</label>-->
-          <%# end %>
-          <%#= link_to "ログアウト", destroy_user_session_path %>
-        <%# else %>
-          <%#= link_to "登録・ログイン", new_user_registration_path %>
-        <%# end %>
-<!--      </div>-->
+      </div>
+      <div class="user-page-btn">
+        <% if user_signed_in? %>
+          <%= link_to "#" do %>
+            <label><i class="far fa-user"></i>マイページ</label>
+          <% end %>
+        <% else %>
+          <%= link_to "登録・ログイン", new_user_registration_path, :class => "login_top_sp" %>
+        <% end %>
+      </div>
     </div>
     <div class="second">
       <ul>
-        <li><%= link_to "料理から探す", "#" %></li>
-        <li><%= link_to "お酒から探す", "#" %></li>
-        <li><%= link_to "ペアリング投稿", "#" %></li>
+        <li><%= link_to "お酒を探す", "#", :class => "header menu" %></li>
+        <li><%= link_to "料理を探す", "#", :class => "header menu" %></li>
+        <li><%= link_to "投稿する", "#", :class => "header menu" %></li>
       </ul>
     </div>
 

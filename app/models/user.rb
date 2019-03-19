@@ -15,14 +15,12 @@ class User < ApplicationRecord
           email:    User.dummy_email(auth),
           password: Devise.friendly_token[0, 20],
           # image: auth.info.image,
-          profile_image: auth.info.image,
-          name: auth.info.name,
-      # nickname: auth.info.nickname,
-      # location: auth.info.location
+          # profile_image: auth.info.image,
+          # name: auth.info.name,
           )
+      user.skip_confirmation!
+      user.save
     end
-    user.skip_confirmation!
-    user.save!
     user
   end
 

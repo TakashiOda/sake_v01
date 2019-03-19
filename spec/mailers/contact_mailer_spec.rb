@@ -1,11 +1,11 @@
 require "rails_helper"
 
-RSpec.describe TestMailer, type: :mailer do
-  describe "notify" do
-    let(:mail) { TestMailer.notify }
+RSpec.describe ContactMailer, type: :mailer do
+  describe "received_email" do
+    let(:mail) { ContactMailer.received_email }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("Notify")
+      expect(mail.subject).to eq("Received email")
       expect(mail.to).to eq(["to@example.org"])
       expect(mail.from).to eq(["from@example.com"])
     end

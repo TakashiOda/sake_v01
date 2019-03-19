@@ -1,11 +1,11 @@
 class ContactController < ApplicationController
   def index
-    @message = Message.new
+    @contact = Contact.new
   end
 
   def confirm
-    @message = Message.new(message_params)
-    if @message.valid?
+    @contact = Contact.new(contact_params)
+    if @contact.valid?
       render :action => 'confirm'
     else
       render :action => 'index'
@@ -13,17 +13,17 @@ class ContactController < ApplicationController
   end
 
   def done
-    @message = Message.new(message_params)
+    @contact = Contact.new(contact_params)
     if params[:back]
       render :action => 'index'
     else
-      MessageMailer.received_email(@message).deliver_now
+      ContactMailer.received_email(@contact).deliver_now
       render :action => 'done'
     end
   end
 
   private
-  def message_params
-    params.require(:message).permit(:name, :email, :content)
+  def contact_params
+    params.require(:contact).permit(:name, :email, :content)
   end
 end

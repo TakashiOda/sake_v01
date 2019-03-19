@@ -8,8 +8,8 @@ class ContactMailer < ApplicationMailer
   default to: 'wiwi5223@gmail.com'
   default from: 'info@donosake.com'
 
-  def received_email(message)
-    @message = message
+  def received_email(contact)
+    @contact = contact
     mail(subject: 'webサイトよりメッセージが届きました') do |format|
       format.text
     end

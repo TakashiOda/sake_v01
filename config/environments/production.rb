@@ -62,18 +62,18 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sake_v0_#{Rails.env}"
-  config.action_mailer.default_url_options = { :host => 'www.donosake.com' }
+  config.action_mailer.default_url_options = { :host => 'https://www.donosake.com' }
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = false　#この一文も追記!!
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :user_name => "app127775943@heroku.com",
-      :password => "sf6wruxt1671",
-      :domain => "donosake.com",
+      :enable_starttls_auto => true,
       :address => "smtp.sendgrid.net",
       :port => 587,
-      :authentication => :plain,
-      :enable_starttls_auto => true
+      :domain => "donosake.com",
+      :user_name => Rails.application.credentials.sendrid[:username],
+      :password => Rails.application.credentials.sendrid[:password],
+      :authentication => :plain
   }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

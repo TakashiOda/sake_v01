@@ -1,5 +1,18 @@
-<p>Welcome <%= @email %>!</p>
+<p>ご利用ありがとうございます。<br>
+  本登録のご案内です。</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>下記のリンクからアカウント有効化へのステップへお進みください。</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'アカウントを有効化する', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+--------------------------
+<p>このメールは送信先メールアドレス宛てに自動送信されています。<br>
+  送信専用メールアドレスのためご返信いただいてもお返事ができません。<br>
+  あらかじめご了承ください。<p/>
+
+<p>万が一、このメールにお心当たりの無い場合は<br>
+  どなたかがメールアドレスを間違って入力してしまった可能性があります。<br>
+  恐れ入りますが、以下の問合せ先までお知らせをお願いいたします。
+<p/>
+<br>
+<p>Donosake 運営チーム</p>

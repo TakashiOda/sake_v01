@@ -23,6 +23,8 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'simple_form'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'pry-rails'

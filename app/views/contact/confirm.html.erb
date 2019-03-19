@@ -1,28 +1,18 @@
-<%= form_for @contact, :url => contact_done_path do |f| %>
-  <div>
-    <h2>メッセージ確認</h2>
-    <div>
-      <strong>名前</strong>
-      <p>
-        <%= f.hidden_field :name %>
-        <%= @contact.name %>
-      </p>
+<div class="contact form confirm">
+  <%= simple_form_for(@contact, :url => contact_done_path ) do |f| %>
+    <h3>メッセージ確認</h3>
+    <p><strong>名前</strong></p>
+    <%= f.hidden_field :name %>
+    <p class="contact_confirm_contents"><%= @contact.name %></p>
+    <p><strong>メールアドレス</strong></p>
+    <%= f.hidden_field :email %>
+    <p class="contact_confirm_contents"><%= @contact.email %></p>
+    <p><strong>内容</strong></p>
+    <%= f.hidden_field :content %>
+    <p class="contact_confirm_contents"><%= @contact.content %></p>
+    <div class="contact_confirm_buttons">
+      <%= f.button :submit, "戻る", name: 'back', :class => "contact submit return" %>
+      <%= f.button :submit, "確認画面へ", :class => "contact submit confirm", method: :post  %>
     </div>
-    <div>
-      <strong>メールアドレス</strong>
-      <p>
-        <%= f.hidden_field :email %>
-        <%= @contact.email %>
-      </p>
-    </div>
-    <div>
-      <strong>内容</strong>
-      <p>
-        <%= f.hidden_field :content %>
-        <%= simple_format(@contact.content) %>
-      </p>
-    </div>
-    <%= f.submit '戻る', name: 'back' %>
-    <%= f.submit '送信する' %>
-  </div>
-<% end %>
+  <% end %>
+</div>

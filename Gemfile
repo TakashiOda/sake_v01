@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'kaminari', '~> 0.17.0'
@@ -25,6 +26,9 @@ gem 'mini_magick'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'pry-rails'

@@ -77,11 +77,30 @@ input:-webkit-autofill {
   font-size: 20px;
   font-weight: bold;
 }
-// ****Header**********************
 
+//********notice*************
+.notice {
+  color: green !important;
+  font-weight: bold !important;
+  background: #A6EDA6 !important;
+  text-align: center !important;
+  padding: 8px 0 !important;
+  font-size: 13px !important;
+}
+.alert {
+  color: red !important;
+  font-weight: bold !important;
+  background: #EDBED5 !important;
+  text-align: center !important;
+  padding: 8px 0 !important;
+  font-size: 13px !important;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+// ****Header**********************
 .header {
   background-color: #fff;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
 }
 
 .first {
@@ -131,7 +150,7 @@ input:-webkit-autofill {
 //*****headerPC用*********
 @media screen and (min-width: 768px) {
   .header {
-    padding: 20px 30px;
+    padding: 20px 30px 5px 30px;
   }
   .first {
     height: 70px;

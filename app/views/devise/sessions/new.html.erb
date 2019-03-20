@@ -1,3 +1,29 @@
+<div class="session-wrapper">
+  <h1>登録・ログイン</h1>
+  <div class="sns_login_box">
+    <h2>SNSから登録・ログイン</h2>
+    <% if resource_class.omniauth_providers %>
+      <li id="btn_facebook">
+        <%= link_to user_facebook_omniauth_authorize_path do %>
+          <i class="fab fa-facebook"></i><div>facebookで登録・ログイン</div>
+        <% end %>
+      </li>
+      <li id="btn_twitter">
+        <%= link_to user_twitter_omniauth_authorize_path do %>
+          <i class="fab fa-twitter"></i><div>twitterで登録・ログイン</div>
+        <% end %>
+      </li>
+    <% end %>
+  </div>
+
+  <div class="email_login_box">
+    <h2>メールアドレスでログイン</h2>
+  </div>
+
+  <div class="email_signup_box">
+    <h2>メールアドレスで登録</h2>
+  </div>
+</div>
 <h2>登録・ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

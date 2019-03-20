@@ -304,100 +304,13 @@ footer {
 
 //******ログイン******
 .session-wrapper {
-  margin-bottom: 30px;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .session-title {
-    text-align: center;
-    font-size: 20px;
-    color: gray;
-  }
-
-  @media screen and (min-width: 769px) {
-    .login-boxes {
-      padding: 30px 0 30px 0;
-      // margin-bottom: 20px;
-    }
-    .social_login .session-title {
-      // margin-top: 15px;
-      margin-bottom: 75px;
-    }
-    .email_login .session-title {
-      // margin-top: 15px;
-      margin-bottom: 30px;
-    }
-    // .social-btns {margin-top: 40px;}
-    // div.signup-and-login {margin-top: 30px;}
-    .login-boxes {
-      display: flex;
-      justify-content: center;
-      // align-items: center;
-    }
-    .borders_between_login {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      #text_between_login {
-        text-align: center;
-        padding: 18px;
-      }
-      #border_between_login {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        div {
-          width: 100px;
-          height: 130px;
-          content: "";
-        }
-      }
-      #border {
-        border-left: 1px solid lightgray;
-      }
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .login-boxes {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .social_login .session-title {
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-    .email_login .session-title {
-      margin-bottom: 40px;
-    }
-    .borders_between_login {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80px;
-      #text_between_login {
-        text-align: center;
-        padding: 18px;
-      }
-      #border_between_login {
-        width: 35vw;
-        content: "";
-        #border {
-          border-top: 1px solid lightgray;
-        }
-      }
-    }
-  }
 }
 
-.social-btns {
+.sns_login_box {
   li#btn_facebook, li#btn_twitter {
     display: flex;
     align-items: center;
@@ -435,68 +348,8 @@ footer {
 
 li#btn_facebook {background: #3B5998;}
 li#btn_twitter {background: #55acee;}
-li#btn_google img{
-  width: 250px;
-  &:hover {
-    opacity: 0.7;
-  }
-}
 
-.email_login {
-  .signup-and-login {margin-top: 50px}
-  .items {
-    // padding: 0 5px;
-    label {
-      margin: 0;
-      color: gray;
-    }
-    .field.password label {
-      margin-top: 5px;
-    }
-    // .text label {margin-top: 10px;}
-    input {
-      @media screen and (max-width: 768px) {
-        width: 95vw;
-        height: 40px;
-      }
-      @media screen and (min-width: 769px) {
-        width: 300px;
-        height: 30px;
-      }
-      font-size: 15px;
-      padding: 3px 10px;
-      border: 1px solid lightgray;
-      border-radius: 3px;
-    }
 
-    div.remember_me {
-      display: flex;
-      // justify-content: center;
-      align-items: center;
-      label {margin-left: 10px}
-    }
-    input#user_remember_me {
-      text-align: left;
-      width: 20px;
-      margin: 0;
-    }
-    .login-btn {
-      margin-top: 15px;
-      border-radius: 3px;
-      background-color: orange;
-      color: #fff;
-      font-weight: 800;
-      // opacity: 0.8;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-  }
-}
-
-.change_login_or_signup p{
-  margin: 20px auto;
-}
 //*****エラーメッセージ*****
 #error_explanation ul {
   color: red !important;

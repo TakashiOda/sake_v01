@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     patch "users/confirmation", to: "users/confirmations#confirm"
+    # get "users/sign_up", to: "users/registrations#new"
   end
 end

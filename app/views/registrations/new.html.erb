@@ -1,15 +1,15 @@
-<div class="session-wrapper">
-  <h1>メールアドレスで登録</h1>
+<div class="registration_user_wrapper">
+  <h2>メールアドレスで登録</h2>
   <div class="email_signup_box">
     <div class="email_signup_items">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
         </div>
 
         <div class="actions submit signup">
-          <%= f.submit "会員登録する" %>
+          <%= f.submit "登録案内を送信" %>
         </div>
         <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
           <div class="send_me_confirm_again">

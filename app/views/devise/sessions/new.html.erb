@@ -54,7 +54,7 @@
   <div class="email_signup_box">
     <h2>メールアドレスで登録</h2>
     <div class="email_signup_items">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">

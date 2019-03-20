@@ -296,6 +296,10 @@ footer {
     text-align: center;
   }
 }
+.registration_user_wrapper h2 {
+  font-size: 23px;
+  text-align: center;
+}
 
 .sns_login_box {
   #btn_facebook, #btn_twitter {
@@ -346,7 +350,7 @@ li#btn_twitter {background: #55acee;}
   }
 }
 
-.session-wrapper {
+.session-wrapper, .registration_user_wrapper {
   .forget_password, .send_me_confirm_again {margin: 5px 0;}
   .actions.submit input {
     color: #fff;
@@ -377,7 +381,7 @@ li#btn_twitter {background: #55acee;}
 //*****登録・ログイン周りPC********
 @media screen and (min-width: 768px) {
   //******SNSログイン****
-  .session-wrapper, .password_set_wrapper {
+  .session-wrapper, .password_set_wrapper, .registration_user_wrapper {
     margin: 40px auto;
     width: 600px;
     border: 1px solid #dfdfdf;

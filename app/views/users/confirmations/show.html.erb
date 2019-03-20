@@ -1,0 +1,25 @@
+<div class="password_set_wrapper">
+  <h1>パスワードを設定してください</h1>
+  <div class="password_set_items">
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name)) do |f| %>
+      <%= f.hidden_field :confirmation_token %>
+      <%= devise_error_messages! %>
+      <div class="field">
+        <%#= f.label :password %>
+        <%# if @minimum_password_length %>
+        <!--        <em>(<%#= @minimum_password_length %> characters minimum)</em>-->
+        <!--      <%# end %><br />-->
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード（6文字以上）" %>
+      </div>
+
+      <div class="field">
+        <!--      <%#= f.label :password_confirmation %><br />-->
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード" %>
+      </div>
+
+      <div class="actions submit password_set">
+        <%= f.submit "設定する" %>
+      </div>
+    <% end %>
+  </div>
+</div>

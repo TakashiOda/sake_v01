@@ -15,7 +15,6 @@
  //= require_self
  //= require_tree .
 
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -48,17 +47,11 @@ textarea {
   height:200px;
 }
 
-// フォームの共通デザイン＆サイズ
-// input {
-//   @media screen and (max-width: 768px) {width: 95vw;}
-//   @media screen and (min-width: 769px) {width: 350px;}
-// }
-
 // フォーム選択時に青枠線消す
 :focus {
   outline: none;
 }
-//
+
 // chromeのフォームでオートフィル時に背景色消す
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
@@ -78,25 +71,7 @@ input:-webkit-autofill {
   font-weight: bold;
 }
 
-//********notice*************
-.notice {
-  color: green !important;
-  font-weight: bold !important;
-  background: #A6EDA6 !important;
-  text-align: center !important;
-  padding: 8px 0 !important;
-  font-size: 13px !important;
-}
-.alert {
-  color: red !important;
-  font-weight: bold !important;
-  background: #EDBED5 !important;
-  text-align: center !important;
-  padding: 8px 0 !important;
-  font-size: 13px !important;
-  margin-bottom: 0;
-  border-radius: 0;
-}
+
 // ****Header**********************
 .header {
   background-color: #fff;
@@ -302,32 +277,41 @@ footer {
   .contact.form .simple_form {width: 50%;}
 }
 
-//******ログイン******
-.session-wrapper {
+//******ログイン***************************************
+//******SNSログイン****
+.session-wrapper, .password_set_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  width: 90vw;
+  padding-bottom: 20px;
+  h1 {font-size: 1.6em;}
+  h2 {
+    font-size: 1.3em;
+    background: #dfdfdf;
+    padding: 8px;
+    width: 100vw;
+    text-align: center;
+  }
 }
 
 .sns_login_box {
-  li#btn_facebook, li#btn_twitter {
+  #btn_facebook, #btn_twitter {
     display: flex;
     align-items: center;
-    width: 240px;
-    height: 55px;
+    height: 60px;
+    width: 310px;
     border-radius: 5px;
-    margin-left: 5px;
-    margin-bottom: 15px;
-    box-shadow: 0px 1px 2px gray;
+    margin: 10px auto;
     &:hover {
       opacity: 0.7;
     }
     a{
       display: block;
-      // height: 72px;
       color: #fff;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       i.fab.fa-facebook, i.fab.fa-twitter {
         padding-left: 15px;
@@ -345,12 +329,128 @@ footer {
   }
 }
 
-
 li#btn_facebook {background: #3B5998;}
 li#btn_twitter {background: #55acee;}
+//******メールアドレスログイン****
+.email_login_items, .email_signup_items {
+  padding: 10px;
+  width: 100%;
+  input {
+    width: 100%;
+    height: 55px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 22px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+  }
+}
 
+.session-wrapper {
+  .forget_password, .send_me_confirm_again {margin: 5px 0;}
+  .actions.submit input {
+    color: #fff;
+    &:hover {opacity: 0.8}
+  }
+  .actions.submit.login input {background: #666666;}
+  .actions.submit.signup input {background: orange;}
+}
 
-//*****エラーメッセージ*****
+.password_set_items {
+  padding: 10px 0;
+  width: 100%;
+  input {
+    width: 100%;
+    height: 55px;
+    margin: 7px 0;
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+  }
+  .actions.submit.password_set input {
+    color: #fff;
+    background: #666666;
+    &:hover {opacity: 0.8}
+  }
+}
+//*****登録・ログイン周りPC********
+@media screen and (min-width: 768px) {
+  //******SNSログイン****
+  .session-wrapper, .password_set_wrapper {
+    margin: 20px auto;
+    width: 600px;
+    border: 1px solid lightgray;
+    h1 {
+      text-align: center;
+      width: 100%;
+    }
+    h2 {width: 500px;}
+  }
+
+  .sns_login_box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .sns_login_btns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      #btn_facebook, #btn_twitter {
+        height: 45px;
+        width: 245px;
+        margin: 5px;
+        border-radius: 3px;
+        a {
+          font-size: 14px;
+          div {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  //******メールアドレスログイン****
+  .email_login_items, .email_signup_items {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+    input {
+      width: 400px;
+      height: 45px;
+      font-size: 1.2em;
+    }
+  }
+  .forget_password, .send_me_confirm_again {margin: 5px 0;}
+  .password_set_items input {
+      height: 40px;
+      font-size: 15px;
+  }
+}
+
+//*****エラーメッセージ************************
+//********notice&alert*************
+.notice {
+  color: green !important;
+  font-weight: bold !important;
+  background: #A6EDA6 !important;
+  text-align: center !important;
+  padding: 8px 0 !important;
+  font-size: 13px !important;
+}
+.alert {
+  color: red !important;
+  font-weight: bold !important;
+  background: #EDBED5 !important;
+  text-align: center !important;
+  padding: 8px 0 !important;
+  font-size: 13px !important;
+  margin-bottom: 0;
+  border-radius: 0;
+}
 #error_explanation ul {
   color: red !important;
   font-weight: bold !important;
@@ -358,8 +458,6 @@ li#btn_twitter {background: #55acee;}
   text-align: center !important;
   padding: 8px 0 !important;
   font-size: 12px !important;
-  //margin-bottom: 0;
-  //border-radius: 0;
 }
 
 
@@ -635,23 +733,7 @@ img#image_prev, img.default {
   display: none;
 }
 
-#user_name, #user_email, #profile_text {
-  @media screen and (max-width: 768px) {
-    width: 95vw;
-  }
-  @media screen and (min-width: 769px) {
-    width: 300px;
-  }
 
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  font-size: 15px;
-  padding: 5px;
-}
-
-#profile_count {
-  font-size: 10px;
-}
 
 #profile_edit_btn input, #user_destroy_btn {
   @media screen and (max-width: 768px) {

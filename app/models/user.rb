@@ -7,6 +7,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: [:twitter, :facebook]
 
+  # メール認証前にパスワードスキップ
+  def password_required?
+    super if confirmed?
+  end
 
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first

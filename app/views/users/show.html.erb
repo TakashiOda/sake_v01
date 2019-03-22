@@ -1,0 +1,66 @@
+<div class="profile_wrapper">
+  <div class="user_profile_box">
+    <div class="user_image">
+      <% if @user.profile_image? %>
+        <%= image_tag(@user.profile_image_url) %>
+      <% else %>
+        <%= image_tag('user_image_default.jpg')%>
+      <% end %>
+    </div>
+    <div class="user_name_box">
+      <% if @user.username? %>
+        <%= @user.username %>
+      <% else %>
+        <p>名前のダミーです</p>
+      <% end %>
+      <% if @user.username? %>
+        <%= @user.user_rank %>
+      <% else %>
+        <p>称号のダミーです</p>
+      <% end %>
+    </div>
+
+    <div class="user_profile_text">
+      <% if @user.profile_text %>
+        <%= @user.profile_text %>
+      <% end %>
+    </div>
+  </div>
+  <dvi class="user_post_data">
+  </dvi>
+</div>
+
+
+<div class="user-profile-link">
+  <% if @user == current_user %>
+    <li><%=link_to "プロフィール編集", edit_user_path(@user) %></li>
+    <li class="logout"><%=link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+  <% end %>
+</div>
+
+<!--<div class="user-menu-wrapper">-->
+<!--  <div class="data evaluations">-->
+    <%#= link_to "#" do %>
+<!--      <li class= "number"><%#= @user.evaluations.count %></li>-->
+<!--      <li class= "menu-label">評価</li>-->
+    <%# end %>
+<!--  </div>-->
+<!--  <div class="data posts">-->
+    <%#= link_to "#" do %>
+<!--      <li class= "number"><%#= @user.favorites.count %></li>-->
+<!--      <li class= "menu-label">お気に入り</li>-->
+    <%# end %>
+<!--  </div>-->
+<!--  <div class="data followers">-->
+    <%#= link_to "#" do %>
+<!--      <li class= "number"><%#= @user.pairs.count %></li>-->
+<!--      <li class= "menu-label">投稿</li>-->
+    <%# end %>
+<!--  </div>-->
+<!--  <div class="data followers">-->
+    <%#= link_to "#" do %>
+<!--      <li class= "number">未実装</li>-->
+<!--      <li class= "menu-label">フォロワー</li>-->
+    <%# end %>
+<!--  </div>-->
+<!--</div>-->

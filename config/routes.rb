@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  get 'users/edit'
+  get 'users/update'
+  get 'users/delete'
   # Home 静的ページ
   root 'home#home'
   get 'privacy_policy', to: 'home#privacy_policy', as: 'privacy_policy'
@@ -7,7 +11,6 @@ Rails.application.routes.draw do
   post 'contact/confirm', to: 'contact#confirm', as: 'contact_confirm'
   post 'contact/done', to: 'contact#done', as: 'contact_done'
   #
-
   # Devise
   devise_for :users, :controllers => {
       :sessions      => "users/sessions",
@@ -20,4 +23,5 @@ Rails.application.routes.draw do
     patch "users/confirmation", to: "users/confirmations#confirm"
     # get "users/sign_up", to: "users/registrations#new"
   end
+  resources :users, only: [:show, :edit, :update, :destroy]
 end

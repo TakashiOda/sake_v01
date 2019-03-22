@@ -25,3 +25,14 @@
 2019-03-22 11:03:52.642 JST [72602] FATAL:  database "odatakashi" does not exist
 2019-03-22 11:05:38.382 JST [72642] ERROR:  database "donosake_dev" already exists
 2019-03-22 11:05:38.382 JST [72642] STATEMENT:  CREATE DATABASE "donosake_dev" ENCODING = 'utf8'
+2019-03-22 15:10:01.887 JST [76366] ERROR:  database "donosake_dev" is being accessed by other users
+2019-03-22 15:10:01.887 JST [76366] DETAIL:  There is 1 other session using the database.
+2019-03-22 15:10:01.887 JST [76366] STATEMENT:  DROP DATABASE IF EXISTS "donosake_dev"
+2019-03-22 15:47:07.635 JST [77138] ERROR:  argument of WHERE must be type boolean, not type integer at character 39
+2019-03-22 15:47:07.635 JST [77138] STATEMENT:  SELECT  "users".* FROM "users" WHERE (1) LIMIT $1
+2019-03-22 15:47:27.994 JST [77138] ERROR:  argument of WHERE must be type boolean, not type integer at character 39
+2019-03-22 15:47:27.994 JST [77138] STATEMENT:  SELECT  "users".* FROM "users" WHERE (1) LIMIT $1
+2019-03-22 15:47:31.251 JST [77138] ERROR:  argument of WHERE must be type boolean, not type integer at character 39
+2019-03-22 15:47:31.251 JST [77138] STATEMENT:  SELECT  "users".* FROM "users" WHERE (1) LIMIT $1
+2019-03-22 15:50:50.794 JST [77138] ERROR:  argument of WHERE must be type boolean, not type integer at character 39
+2019-03-22 15:50:50.794 JST [77138] STATEMENT:  SELECT  "users".* FROM "users" WHERE (1) LIMIT $1

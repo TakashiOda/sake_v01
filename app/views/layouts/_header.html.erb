@@ -9,7 +9,7 @@
       </div>
       <div class="user-page-btn">
         <% if user_signed_in? %>
-          <%= link_to "#" do %>
+          <%= link_to user_path(current_user) do %>
             <label><i class="far fa-user"></i>マイページ</label>
           <% end %>
         <% else %>

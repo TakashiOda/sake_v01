@@ -1,8 +1,14 @@
 <div class="profile-form">
-  <h2>プロフィール編集</h2>
   <div class="form-fields">
     <%= form_with(model: @user, local: true) do |f| %>
-      <div class="field image">
+      <% if @user.errors.any? %>
+        <div class="alert">
+          <% @user.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="field image" id="user_profile_image_edit">
         <% if @user.profile_image? %>
           <%= image_tag @user.profile_image.url, id: :image_prev %><br />
           <label for="user_image" id="user_image_btn">
@@ -10,7 +16,7 @@
             <%= f.file_field :profile_image, id: :user_image %>
           </label>
         <% else %>
-          <%= image_tag "user_image_default.jpg", id: :image_prev %><br />
+          <%= image_tag "user_image_default4.png", id: :image_prev %><br />
           <label for="user_image" id="user_image_btn">
             <i class="fas fa-camera"></i>
             <%= f.file_field :profile_image, id: :user_image %>
@@ -19,7 +25,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :ユーザー名 %><br />
+        <%= f.label :ユーザー名 %>*公開<br />
         <%= f.text_field :username %>
       </div>
 
@@ -40,3 +46,29 @@
     <%= link_to "退会する", user_path(@user), method: :delete, data: { confirm: '本当に退会しますか？' } %>
   </div>
 </div>
+
+<script type="text/javascript">
+    $(function(){
+        var text_max = 150; // 最大入力値
+        $(".count").text(text_max - $("#profile_text").val().length);
+
+        $("#profile_text").on("keydown keyup keypress change",function(){
+            var text_length = $(this).val().length;
+            var countdown = text_max - text_length;
+            $(".count").text(countdown);
+// CSSは任意で
+            if(countdown < 0){
+                $('.count').css({
+                    color:'#ff0000',
+                    fontWeight:'bold'
+                });
+            } else {
+                $('.count').css({
+                    color:'#000000',
+                    fontWeight:'normal'
+                });
+            }
+        });
+    });
+
+</script>

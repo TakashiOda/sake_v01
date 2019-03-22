@@ -9,9 +9,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    @user.update_attributes(user_params)
+    if @user.save
       redirect_to user_path(@user)
+    # elsif @user.errors.details[:profile_text][0][:error] = :too_long
+    #   flash[:alert] = "プロフィールは150字以内で入力してください"
+    #   render 'edit'
     else
+      # binding.pry
+      # flash[:alert] = @user.errors.full_messages
       render 'edit'
     end
   end

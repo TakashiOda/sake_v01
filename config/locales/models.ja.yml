@@ -3,6 +3,7 @@ ja:
     attributes:
       user:
         name: 名前
+        profile_text: プロフィール
   activemodel:
     attributes:
       contact:

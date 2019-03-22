@@ -1,0 +1,27 @@
+2019-03-22 10:00:06.453 JST [70838] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-03-22 10:00:06.453 JST [70838] LOG:  could not bind IPv4 address "192.168.33.10": Can't assign requested address
+2019-03-22 10:00:06.453 JST [70838] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-03-22 10:00:06.454 JST [70838] LOG:  listening on IPv6 address "::1", port 5432
+2019-03-22 10:00:06.454 JST [70838] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-03-22 10:00:06.475 JST [70839] LOG:  database system was shut down at 2019-03-22 09:59:57 JST
+2019-03-22 10:00:06.479 JST [70838] LOG:  database system is ready to accept connections
+2019-03-22 10:00:19.085 JST [70863] FATAL:  role "postgres" does not exist
+2019-03-22 10:08:27.955 JST [70893] FATAL:  role "postgres" does not exist
+2019-03-22 10:15:21.194 JST [71721] FATAL:  role "postgres" does not exist
+2019-03-22 10:16:29.720 JST [71750] FATAL:  role "postgres" does not exist
+2019-03-22 10:20:14.870 JST [71798] FATAL:  database "odatakashi" does not exist
+2019-03-22 10:20:21.816 JST [71803] FATAL:  role "postgres" does not exist
+2019-03-22 10:20:35.638 JST [71810] FATAL:  role "postgres" does not exist
+2019-03-22 10:23:30.494 JST [71888] FATAL:  role "donosake" does not exist
+2019-03-22 10:23:58.012 JST [71917] FATAL:  role "donosake" does not exist
+2019-03-22 10:24:52.569 JST [71941] FATAL:  role "root" does not exist
+2019-03-22 10:30:24.923 JST [72069] FATAL:  role "postgres" does not exist
+2019-03-22 10:38:12.467 JST [72176] FATAL:  role "root" does not exist
+2019-03-22 10:40:20.421 JST [72217] FATAL:  database "odatakashi" does not exist
+2019-03-22 10:40:36.319 JST [72223] FATAL:  database "psql" does not exist
+2019-03-22 10:45:45.564 JST [72303] FATAL:  role "postgres" does not exist
+2019-03-22 10:46:15.186 JST [72338] FATAL:  database "donosake_dev" does not exist
+2019-03-22 11:03:34.092 JST [72596] FATAL:  database "odatakashi" does not exist
+2019-03-22 11:03:52.642 JST [72602] FATAL:  database "odatakashi" does not exist
+2019-03-22 11:05:38.382 JST [72642] ERROR:  database "donosake_dev" already exists
+2019-03-22 11:05:38.382 JST [72642] STATEMENT:  CREATE DATABASE "donosake_dev" ENCODING = 'utf8'

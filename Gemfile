@@ -29,13 +29,14 @@ gem 'bootstrap-sass'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'rails-i18n'
+gem 'pg'
 
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'sqlite3', '~> 1.3.6'
+  # gem 'sqlite3', '~> 1.3.6'
   gem 'rb-readline'
 end
 
@@ -56,6 +57,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :production, :staging do
-  gem 'pg'
-end
+# group :production, :staging do
+#   gem 'pg'
+# end

@@ -389,7 +389,10 @@ li#btn_twitter {background: #55acee;}
       text-align: center;
       width: 100%;
     }
-    h2 {width: 500px;}
+    h2 {
+      width: 500px;
+      margin: 30px auto 20px auto;
+    }
   }
 
   .sns_login_box {

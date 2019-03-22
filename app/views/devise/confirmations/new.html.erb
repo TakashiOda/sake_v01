@@ -1,16 +1,22 @@
-<h2>Resend confirmation instructions</h2>
+<div class="registration_user_wrapper">
+  <h2>登録案内を再送する</h2>
+  <div class="email_signup_box">
+    <div class="email_signup_items">
+      <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <div class="actions submit signup">
+          <%= f.submit "送信" %>
+        </div>
+        <%#- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+        <div class="send_me_confirm_again">
+          <%= link_to "登録・ログインページに戻る", new_user_session_path %><br />
+        </div>
+        <%# end %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

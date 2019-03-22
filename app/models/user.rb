@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-
+  validates :profile_text, length: { maximum: 150 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,11 +18,10 @@ class User < ApplicationRecord
       user = User.new(
           uid:      auth.uid,
           provider: auth.provider,
-          email:    User.dummy_email(auth),
+          email:    auth.info.email || User.dummy_email(auth),
           password: Devise.friendly_token[0, 20],
-          # image: auth.info.image,
-          # profile_image: auth.info.image,
-          # name: auth.info.name,
+          profile_image: auth.info.image,
+          location: auth.info.loction
           )
       user.skip_confirmation!
       user.save

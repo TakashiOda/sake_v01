@@ -2,7 +2,7 @@
   <div class="user_profile_box">
     <div class="user_image">
       <% if @user.profile_image? %>
-        <%= image_tag(@user.profile_image_url) %>
+        <%= image_tag(@user.profile_image) %>
       <% else %>
         <%= image_tag('user_image_default4.png')%>
       <% end %>

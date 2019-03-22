@@ -674,25 +674,24 @@ input[type=radio].home-radio-input{display: none;}
   .user_profile_box {width: 500px !important;}
 }
 
-// *****user edit*****
-.profile-form {
-  text-decoration: none;
-  // text-align: center;
+//11.プロフィールedit******************************************************************
+.profile_edit_wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
-  h2 {
-    font-size: 25px;
-    margin: 20px 0;
-  }
-  .field.text label{
-    margin-top: 10px;
+  align-items: center;
+  width: 95vw;
+  margin: 5px auto 30px auto;
+  .form_fields {
+    .field input, .field textarea {
+      width: 100%;
+      border: 1px solid lightgray;
+      padding: 5px;
+      border-radius: 3px;
+    }
+    .field input {height: 40px;}
   }
 }
-
-
 img#image_prev, img.default {
   text-align: center;
   width: 100px;
@@ -708,7 +707,7 @@ img#image_prev, img.default {
   width: 106px;
   height: 106px;
   position: relative;
-  margin: 0 auto;
+  margin: 15px auto;
   img {
     position: absolute;
     top: 3px;
@@ -720,14 +719,14 @@ img#image_prev, img.default {
   }
 }
 
-.field.image {
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+//.field.image {
+//  margin-top: 0;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//  position: relative;
+//}
 
 #user_image_btn {
   position: absolute;
@@ -750,25 +749,50 @@ img#image_prev, img.default {
   display: none;
 }
 
+.field.sex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .user_edit_sex_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
-
-#profile_edit_btn input, #user_destroy_btn {
-  @media screen and (max-width: 768px) {
-    width: 95vw;
+    label.user_sex {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      input {
+        width: 20px;
+        margin: 0 8px 0 0;
+        }
+      span {
+        font-size: 18px;
+        color: rgba(51, 51, 51, 0.82);
+      }
+    }
+    label.user_sex.female {
+      margin-left: 15px;
+    }
   }
-  @media screen and (min-width: 769px) {
+}
+
+
+@media screen and (min-width: 769px) {
+  #profile_edit_btn input, #user_destroy_btn {
     width: 300px;
-  }
-  border: 1px solid lightgray;
-  border-radius: 3px;
-  font-size: 18px;
-  padding: 5px 10px;
-  margin-top: 10px;
-  color: gray;
-  font-weight: bold;
-  &:hover {
-    background: lightgray;
-    color: #fff;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    color: gray;
+    font-weight: bold;
+    &:hover {
+      background: lightgray;
+      color: #fff;
+    }
   }
 }
 
